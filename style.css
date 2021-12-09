@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #252839;
+}
+
+h2{
+    position: relative;
+    font-size: 14vh;
+    text-transform: uppercase;
+    color: #252839;
+    -webkit-text-stroke: 0.3vw #383d52;
+}
+
+h2::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    color: #01fe87;
+    -webkit-text-stroke: 0 #383d52;
+    overflow: hidden;
+    border-right: 2px solid #01fe87;
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate{
+    0%,10%,100%{
+        width: 0;
+    }
+    70%,80%{
+        width: 100%;
+    }
+}
